@@ -3,7 +3,7 @@ import requests
 
 # get the weather forecast in Lonodn
 def get_weather_forecast():
-	url='http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&&APPID=5e1d8efd49bb21e6a6c3d0edede0563d'
+	url='http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&&APPID=apikey'
 	weather_request=requests.get(url)
 	weather_json=weather_request.json()
 
