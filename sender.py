@@ -11,7 +11,7 @@ def send_emails(emails,schedule,forecast):
 
 	# Login
 	Password=input("what's your password: ")
-	from_email = "rubychous@gmil.com"
+	from_email = "my@gmil.com"
 	server.login(from_email,Password)
 
 	# send to entire email list
