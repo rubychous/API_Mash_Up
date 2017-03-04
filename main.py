@@ -2,7 +2,7 @@ import weather
 import sender
 
 
-# read the email file
+# read the emails.txt file
 def get_emails():
     emails={}
     try:
@@ -15,7 +15,7 @@ def get_emails():
     return emails
 
 
-# read schedule file
+# read schedule.txt file
 def get_schedule():
 	try:
 		schedule_file = open("schedule.txt","r")
