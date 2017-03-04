@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar  2 17:13:20 2017
-
-@author: LUYI
-"""
 import requests
+
+
+# get the weather forecast in Lonodn
 def get_weather_forecast():
-	url='http://api.openweathermap.org/data/2.5/weather?q=London&APPID=yourapikey'
+	url='http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&&APPID=5e1d8efd49bb21e6a6c3d0edede0563d'
 	weather_request=requests.get(url)
 	weather_json=weather_request.json()
 
@@ -17,6 +14,6 @@ def get_weather_forecast():
 
 
 	forecast = "The Forecast for Today is "
-	forecast += description + ' with a high of ' + str(int(temp_max))
-	forecast += ' and a low of ' + str(int(temp_min))
+	forecast += description + ' with a high of ' + str(int(temp_max)) + ' Celsius degree'
+	forecast += ' and a low of ' + str(int(temp_min)) + ' Celsius degree'
 	return forecast

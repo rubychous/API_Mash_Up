@@ -1,14 +1,19 @@
 import weather
 import sender
 
+
+# read the email file
 def get_emails():
-	try:
-		email_file=read_csv("emails.csv")
-		for line in range(0,2):
-			emails = email_file.at[line,"email"]
-	except FileNotFoundError:
-		print("ERROR")
-	return emails
+    emails={}
+    try:
+        email_file=open("emails.txt","r")
+        for line in email_file:
+            (email,name)=line.split(",")
+            emails[email]=name.strip()
+    except FileNotFoundError:
+        print("Error")
+    return emails
+
 
 # read schedule file
 def get_schedule():
@@ -19,6 +24,7 @@ def get_schedule():
 		print("ERROR")
 	return schedule
 
+
 # define main function
 def main():
 	emails=get_emails()
@@ -26,4 +32,6 @@ def main():
 	forecast=weather.get_weather_forecast()
 	sender.send_emails(emails,schedule,forecast)
 
+
+# call main function
 main()
