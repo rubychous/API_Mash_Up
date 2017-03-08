@@ -1,3 +1,0 @@
-Event A - 9:00
-Event B - 10:00
-Event C - 11:00
